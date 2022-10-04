@@ -1,6 +1,6 @@
 import { obtenerRobots } from './arreglos';
 
-describe('pruebas de arreglos', () => {
+xdescribe('pruebas de arreglos', () => {
   it('debe de retornar al menos 3 robots', () => {
     const res = obtenerRobots();
     expect(res.length).toBeGreaterThanOrEqual(3);
