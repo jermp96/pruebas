@@ -1,7 +1,12 @@
 import { Jugador } from './clase';
 
 describe('pruebas de clases' , () => {
-  const jugador = new Jugador();
+  let jugador = new Jugador();
+
+  beforeEach(() => {
+    jugador = new Jugador();
+  });
+
 
   it('debe de retornar 80 de hp si recibe 20 de daño', () => {
     
