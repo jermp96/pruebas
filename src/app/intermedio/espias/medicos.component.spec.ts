@@ -1,5 +1,5 @@
 
-import { from } from 'rxjs';
+import { EMPTY, from } from 'rxjs';
 import { MedicosComponent } from './medicos.component';
 import { MedicosService } from './medicos.service';
 
@@ -25,5 +25,16 @@ describe('MedicosComponent', () => {
         expect(componente.medicos.length).toBeGreaterThan(0);
     });
 
+
+    it('debe de llamar al servicio para agregar un médico', () => {
+        
+        const espia = spyOn(servicio, 'agregarMedico').and.callFake(medico => {
+            return EMPTY;
+        });
+
+        componente.agregarMedico();
+
+        expect(espia).toHaveBeenCalled();
+    });
 
 });
