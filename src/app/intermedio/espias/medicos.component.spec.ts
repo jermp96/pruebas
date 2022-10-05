@@ -55,4 +55,27 @@ describe('MedicosComponent', () => {
         componente.agregarMedico();
         expect(componente.mensajeError).toBe(miError);  
     });
+
+    it('debe de llamaral servidor para borrar un médico', () => {
+
+        spyOn(window, 'confirm').and.returnValue(true); // espía la funcion confirm del objeto window
+        const espia = spyOn(servicio, 'borrarMedico')
+        .and.returnValue(EMPTY); // no interesa el valor que retorne
+
+        componente.borrarMedico('1');
+
+        expect(espia).toHaveBeenCalledWith('1');
+    });
+
+    it('NO debe de llamaral servidor para borrar un médico', () => {
+
+        spyOn(window, 'confirm').and.returnValue(false); // espía la funcion confirm del objeto window
+        
+        const espia = spyOn(servicio, 'borrarMedico')
+        .and.returnValue(EMPTY); // no interesa el valor que retorne
+
+        componente.borrarMedico('1');
+
+        expect(espia).not.toHaveBeenCalledWith('1');
+    });
 });
