@@ -1,5 +1,7 @@
 import { MedicoComponent } from './medico.component';
 import {TestBed, ComponentFixture} from '@angular/core/testing';
+import { MedicoService } from './medico.service';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('Medico component', () => {
   let component: MedicoComponent; // el .ts
@@ -10,6 +12,12 @@ describe('Medico component', () => {
     TestBed.configureTestingModule({
       declarations: [
         MedicoComponent
+      ],
+      providers: [
+        MedicoService
+      ],
+      imports:[
+        HttpClientModule
       ]
     });
 
