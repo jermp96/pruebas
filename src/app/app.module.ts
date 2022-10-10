@@ -8,6 +8,8 @@ import { HospitalComponent } from './intermedio2/hospital/hospital.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IncrementadorComponent } from './intermedio2/incrementador/incrementador.component';
+import { RouterModule } from '@angular/router';
+import { RUTAS } from './avanzado/rutas/app.routes';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,7 @@ import { IncrementadorComponent } from './intermedio2/incrementador/incrementado
     IncrementadorComponent
   ],
   imports: [
+    RouterModule.forRoot(RUTAS),
     FormsModule,
     BrowserModule
   ],
